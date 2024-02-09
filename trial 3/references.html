@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisreen El-Khansa</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Footer styles */
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-family: "Comic Sans MS", sans-serif;
+            font-size: 16px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* Main content styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0 20px 60px; /* Add padding at the bottom to ensure content doesn't overlap with the footer */
+            background-color: #f5f5f5; /* Light background to reduce strain on the eyes */
+
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            /* margin-bottom: 20px; Add some space between the header and the content */
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+            /* background-color: #333; */
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a:focus {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        section#references {
+            padding: 20px;
+            background-color: white; /* Make the section stand out from the body background */
+            border-radius: 8px; /* Soften the edges */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+            margin: 6%; /* Space between content and footer */
+        }
+
+        .references-container {
+            display: flex;
+            flex-direction: column; /* Stack the categories vertically on smaller screens */
+            align-items: center; /* Center-align the content for a neater appearance */
+        }
+
+        .research-papers,
+        .books {
+            margin: 10px 0;
+            width: 100%; /* Make use of the available horizontal space */
+        }
+
+        .research-papers h3,
+        .books h3 {
+            color: #4CAF50; /* Echo the header color for visual consistency */
+            margin-bottom: 15px;
+        }
+
+        .research-papers ul,
+        .books ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .research-papers ul li,
+        .books ul li {
+            background-color: #e9e9e9; /* Slight background contrast */
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px; /* Soften the edges */
+        }
+
+        .research-papers ul li a,
+        .books ul li a {
+            text-decoration: none;
+            color: #007bff;
+            display: block; /* Make the entire list item clickable */
+        }
+
+        .research-papers ul li a:hover,
+        .books ul li a:hover {
+            text-decoration: underline; /* Indicate clickable links */
+        }
+
+        /* Responsive adjustments */
+        @media (min-width: 768px) {
+            .references-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .research-papers,
+            .books {
+                width: 48%; /* Adjust width for side-by-side layout on larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arabic Natural Language Processing at Lebanese University</h1>
+        <p>Nisreen El-Khansa Website</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="definition.html">NLP Definition</a></li>
+            <li><a href="tools.html">Tools for NLP</a></li>
+            <li><a href="statistics.html">Statistics</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+   <center> <section id="references">
+        <u><h2>References</h2></u>
+        <div class="references-container">
+            <div class="research-papers">
+                <u><h3>Research Papers</h3></u>
+                <ul>
+                    <li><a href="https://aclanthology.org/volumes/2021.wanlp-1/" target="_blank">Proceedings of the Sixth Arabic Natural Language Processing Workshop</a></li>
+                    <li><a href="https://cacm.acm.org/magazines/2021/4/251355-a-panoramic-survey-of-natural-language-processing-in-the-arab-world/abstract" target="_blank">A Panoramic Survey of Natural Language Processing in the Arab World</a></li>
+                    <li><a href="https://www.sciencedirect.com/science/article/pii/S1319157818310553" target="_blank">Arabic Natural Language Processing: An overview</a></li>
+                    <!-- Add more research papers as needed -->
+                </ul>
+            </div>
+
+            <div class="books">
+                <u><h3>Books</h3></u>
+                <ul>
+                    <li><a href="https://link.springer.com/book/10.1007/978-3-031-02139-8" target="_blank">Introduction to Arabic Natural Language Processing</a></li>
+                    <li><a href="https://link.springer.com/book/10.1007/978-3-030-34614-0" target="_blank">Recent Advances in NLP: The Case of Arabic Language</a></li>
+                    <li><a href="https://books.google.com.lb/books/about/Introduction_to_Arabic_Natural_Language.html?id=sYhyEAAAQBAJ&redir_esc=y" target="_blank">Introduction to Arabic Natural Language Processing</a></li>
+                    <!-- Add more books as needed -->
+                </ul>
+            </div>
+        </div>
+    </section> </center>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="script.js"></script>
+
+    <footer>
+        <p>Address: Lebanese University - Faculty of Literature and Letters - Communication and Language Sciences Center - Center Celine - Tayyuneh - Floor 6</p>
+        <p>Phone: +961 (1) 384132</p>
+        <p>Email: sclc@hotmail.com</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisreen El-Khansa</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        function Start(event) {
+            event.dataTransfer.setData("Text", event.target.id);
+        }
+
+        function leave(event) {
+            event.currentTarget.className = "class1";
+        }
+
+        function End(event) {
+            //document.getElementById("demo").innerHTML = "Dragging ended.";
+        }
+
+        function over(event) {
+            event.preventDefault();
+            // event.currentTarget.className="over_color";
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            const data = event.dataTransfer.getData("Text");
+            event.target.appendChild(document.getElementById(data));
+            //event.currentTarget.className="class1";
+        }
+
+        window.addEventListener('scroll', () => {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach((item, index) => {
+                const rect = item.getBoundingClientRect();
+                const isVisible = (rect.top >= 0 && rect.bottom <= window.innerHeight);
+                if (isVisible) {
+                    item.classList.add('visible');
+                } else {
+                    item.classList.remove('visible');
+                }
+            });
+        });
+    </script>
+
+    <style>
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+            /* background-color: #333; */
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a:focus {
+            background-color: #ddd;
+            color: #333;
+        }
+        
+        .class1 {
+            width: 330px;
+            height: 330px;
+            padding: 10px;
+            margin: 10px;
+            border: 4px solid gray;
+        }
+
+        .over_color {
+            width: 300px;
+            height: 300px;
+            padding: 10px;
+            display: inline-block;
+            border: 4px solid LightGray;
+        }
+
+        img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .puzzle{
+            display: flex;
+            align-items: center;
+            align-content: center;
+        }
+
+        .timeline {
+            margin: 7%;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-left: 2px solid green;
+            /* position: relative; */
+            float: right;
+            /* margin-right: 50px; */
+            width: calc(100% - 400px); /* Adjust width to fit the facts */
+            text-align: right; /* Align text to the right */
+        }
+
+        .timeline::before {
+            content: '';
+            /* position: absolute;
+            top: 0;
+            left: -6px; */
+            width: 10px;
+            height: 100%; /* Make the line full height */
+            background-color: green;
+            z-index: 1;
+        }
+
+        .timeline-item {
+            padding: 20px 0;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: attr(data-number);
+            position: absolute;
+            top: 50%;
+            left: -26px;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            background-color: green;
+            border-radius: 50%;
+            z-index: 2;
+            transform: translateY(-50%);
+        }
+
+        .timeline-item.hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2, .timeline-item {
+            font-family: "Comic Sans MS", sans-serif;
+            font-size: 24px;
+            color: purple;
+        }
+
+        .facts-container {
+            margin: 50px auto;
+            width: 60%; /* Adjust the width as needed */
+            text-align: right; /* Align text to the right */
+        }
+
+        /* Header styles */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            clear: both; /* Clear floating elements */
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #openModalBtn {
+            height: 100px;
+            width: 300px;
+            background-color: #4CAF50; /* Button color */
+            color: white; /* Text color */
+            border: none; /* Remove default border */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 24px; /* Larger font size */
+            cursor: pointer; /* Cursor indicates it's clickable */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects */
+            margin: 5%;
+        }
+
+        #openModalBtn:hover, #openModalBtn:focus {
+            background-color: #367c39; /* Darker shade on hover/focus */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Larger shadow for lifted effect */
+        }
+
+        #openModalBtn:active {
+            background-color: #2e6531; /* Even darker shade when clicked */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Smaller shadow to simulate pressing down */
+            transform: translateY(2px); /* Slight move down to simulate pressing */
+        }
+    </style>
+</head>
+
+  <!-- Header -->
+<header>
+    <h1>Arabic Natural Language Processing at Lebanese University</h1>
+    <p>Nisreen El-Khansa Website</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="mission.html">Mission</a></li>
+        <li><a href="definition.html">NLP Definition</a></li>
+        <li><a href="tools.html">Tools for NLP</a></li>
+        <li><a href="statistics.html">Statistics</a></li>
+        <li><a href="references.html">References</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+</nav>
+
+<body>
+    
+        <!-- Button to open the modal -->
+       <center> <button id="openModalBtn">Play Puzzle Game</button> </center>
+
+    <div class="timeline">
+        <h2>17 Interesting Facts about the Arabic Language:</h2>
+        <div class="timeline-item hidden" data-number="1">422 Million Speakers and Growing Fast</div>
+        <div class="timeline-item hidden" data-number="2">Official Language in 22 Countries</div>
+        <div class="timeline-item hidden" data-number="3">There are 30 Distinct Dialects (At Least!)</div>
+        <div class="timeline-item hidden" data-number="4">Sounds Not Found in English</div>
+        <div class="timeline-item hidden" data-number="5">Many English Words have Arabic Origins</div>
+        <div class="timeline-item hidden" data-number="6">There are no Capital Letters in Arabic</div>
+        <div class="timeline-item hidden" data-number="7">Arabic Contains Only 3 Vowel Sounds</div>
+        <div class="timeline-item hidden" data-number="8">Arabic is Written Entirely in Script</div>
+        <div class="timeline-item hidden" data-number="9">Arabic is Written and Read from Right to Left</div>
+        <div class="timeline-item hidden" data-number="10">BUT… Arabic Numbers are Written from Left to Right</div>
+        <div class="timeline-item hidden" data-number="11">Arabic is a VERY Difficult Language to Learn for English Speakers</div>
+        <div class="timeline-item hidden" data-number="12">There are Over 24 Different Words for “Love”</div>
+        <div class="timeline-item hidden" data-number="13">Contains Different Versions for Different Uses</div>
+        <div class="timeline-item hidden" data-number="14">Arabic Developed Predominantly through Oral and Poetic Tradition and is often Considered Art</div>
+        <div class="timeline-item hidden" data-number="15">Words are Constructed Based on a Three-Letter Root System</div>
+        <div class="timeline-item hidden" data-number="16">Arabic Can Be Incredibly Difficult to Directly Translate</div>
+        <div class="timeline-item hidden" data-number="17">Arabic is Good for the Brain</div>
+    </div>
+
+
+
+    <!-- The Modal -->
+   <center> <div id="puzzleModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="game-container">
+                <!-- Your existing game structure goes here -->
+                <div class="class1" ondrop="drop(event)" ondragend="End(event)" ondragover="over(event)" ondragleave="leave(event)">
+                    <table>
+                        <tr>
+                            <td><img src="images/1" draggable="true" ondragstart="Start(event)" id="1"></td>
+                            <td><img src="images/2" draggable="true" ondragstart="Start(event)" id="2"></td>
+                        </tr>
+                        <tr>
+                            <td><img src="images/3" draggable="true" ondragstart="Start(event)" id="3"></td>
+                            <td><img src="images/4" draggable="true" ondragstart="Start(event)" id="4"></td>
+                        </tr>
+                    </table>
+                </div>
+                <p id="demo"></p>
+                <div class="class1" ondragstart="Start(event)" ondrop="drop(event)" ondragover="over(event)"></div>
+            </div>
+        </div>
+    </div></center>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("puzzleModal");
+        
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalBtn");
+        
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        
+        // When the user clicks on the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>   
+    
+</body>
+
+<footer>
+    <p>Address: Lebanese University - Faculty of Literature and Letters - Communication and Language Sciences Center - Center Celine - Tayyuneh - Floor 6</p>
+    <p>Phone: +961 (1) 384132</p>
+    <p>Email: sclc@hotmail.com</p>
+</footer>
+
+</html>
+
+
+

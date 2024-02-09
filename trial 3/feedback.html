@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisreen El-Khansa</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Footer styles */
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-family: "Comic Sans MS", sans-serif;
+            font-size: 16px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Main content styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            overflow: hidden;
+            /* background-color: #333; */
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a:focus {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        section#feedback {
+            padding: 20px;
+            margin: 6%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Arabic Natural Language Processing at Lebanese University</h1>
+        <p>Nisreen El-Khansa Website</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="definition.html">NLP Definition</a></li>
+            <li><a href="tools.html">Tools for NLP</a></li>
+            <li><a href="statistics.html">Statistics</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+   <center> <section id="feedback">
+        <u><h2>Feedback</h2></u>
+        <form id="feedbackForm">
+            <label for="feedbackMessage">Share your feedback:</label>
+            <textarea id="feedbackMessage" name="feedbackMessage" rows="4" required></textarea>
+            <button type="submit">Submit Feedback</button>
+            <script>
+                //if button pressed display alert thanks for your feedback
+                document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    alert("Thanks for your feedback!");
+                });
+            </script>
+        </form>
+    </section>
+    </center>
+
+    <footer>
+        <p>Address: Lebanese University - Faculty of Literature and Letters - Communication and Language Sciences Center - Center Celine - Tayyuneh - Floor 6</p>
+        <p>Phone: +961 (1) 384132</p>
+        <p>Email: sclc@hotmail.com</p>
+    </footer>
+</body>
+</html>

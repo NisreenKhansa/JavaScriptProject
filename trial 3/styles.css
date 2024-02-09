@@ -1,0 +1,77 @@
+/* Reset some default styles for better consistency across browsers */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Use your preferred font stack or import Google Fonts */
+    line-height: 1.6;
+}
+
+header {
+    background-color: #4CAF50; /* Green color for the header */
+    color: #fff; /* White text for better contrast */
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #2E7D32; /* Darker green color for the navigation */
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+section {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+#home {
+    background-color: #E8F5E9; /* Light green background for the homepage section */
+}
+
+#facts ul {
+    list-style-type: none;
+}
+
+#countdown {
+    font-size: 24px;
+    margin-top: 20px;
+    color: #2E7D32; /* Darker green color for the countdown text */
+}
+
+/* Additional styles for research papers and books lists */
+.research-papers ul,
+.books ul {
+    list-style-type: none;
+}
+
+.research-papers ul li,
+.books ul li {
+    margin-bottom: 10px;
+}
+
+.research-papers a,
+.books a {
+    color: #2E7D32; /* Darker green color for the links */
+    text-decoration: underline;
+}
+
+/* Add more styles as needed */

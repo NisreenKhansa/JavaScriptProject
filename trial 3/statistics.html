@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisreen El-Khansa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        overflow: hidden;
+        /* background-color: #333; */
+    }
+
+    nav ul li {
+        display: inline-block;
+    }
+
+    nav ul li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+
+    nav ul li a:hover, nav ul li a:focus {
+        background-color: #ddd;
+        color: #333;
+    }
+
+    .statistics-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin: 10px;
+    }
+
+    .statistics-card {
+        /* Adjustments for responsiveness */
+        box-sizing: border-box; /* Ensures padding is included in the width */
+        margin: 10px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+        flex-grow: 1; /* Cards can grow to fill available space */
+        flex-basis: calc(50% - 20px); /* Sets base size for cards, subtracting margin */
+        max-width: calc(50% - 20px); /* Maximum width of cards, subtracting margin */
+    }
+
+    .chart-container {
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .statistics-card h3 {
+        color: #333;
+        margin: 0 0 20px 0;
+    }
+
+    .statistics-card p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    footer {
+           background-color: #4CAF50;
+           color: white;
+           text-align: center;
+           padding: 20px;
+           width: 100%;
+           font-family: "Comic Sans MS", sans-serif;
+           font-size: 16px;
+       }
+</style>
+
+<body>
+    <header>
+        <h1>Arabic Natural Language Processing at Lebanese University</h1>
+        <p>Nisreen El-Khansa Website</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="definition.html">NLP Definition</a></li>
+            <li><a href="tools.html">Tools for NLP</a></li>
+            <li><a href="statistics.html">Statistics</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <section id="statistics">
+        <u><center><h2>Statistics</h2></center></u>
+        
+        <div class="statistics-container">
+            <div class="statistics-card">
+                <h3>Research Papers Published</h3>
+                <p>Over the past year, our team has published <strong>20</strong> research papers in the field of Arabic NLP, contributing significantly to advancements in machine translation, sentiment analysis, and dialect recognition.</p>
+            </div>
+    
+            <div class="statistics-card">
+                <h3>Active Research Projects</h3>
+                <p>We are currently involved in <strong>5</strong> active research projects exploring various aspects of Arabic Natural Language Processing, including computational linguistics and speech processing.</p>
+            </div>
+    
+            <div class="statistics-card">
+                <h3>Collaborations and Partnerships</h3>
+                <p>Our team collaborates with <strong>10</strong> international universities and research institutions to foster innovation and share knowledge in the realm of Arabic NLP.</p>
+            </div>
+    
+            <div class="statistics-card">
+                <h3>Tools Developed</h3>
+                <p>We have developed <strong>3</strong> proprietary tools for Arabic text analysis, which are now widely used by researchers and developers around the globe.</p>
+            </div>
+    
+            <div class="statistics-card">
+                <h3>Conferences Attended</h3>
+                <p>Members of our team have presented our research findings at over <strong>15</strong> international conferences, showcasing the leading-edge work being done at the Lebanese University.</p>
+            </div>
+        </div>
+    
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+<footer >
+    <p>Address: Lebanese University - Faculty of Literature and Letters - Communication and Language Sciences Center - Center Celine - Tayyuneh - Floor 6</p>
+    <p>Phone: +961 (1) 384132</p>
+    <p>Email: sclc@hotmail.com</p>
+</footer>
+</html>

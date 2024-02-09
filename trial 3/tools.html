@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nisreen El-Khansa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    }
+
+    header {
+        /* background-color: #35424a; */
+        color: #ffffff;
+        padding: 20px;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        overflow: hidden;
+        /* background-color: #333; */
+    }
+
+    nav ul li {
+        display: inline-block;
+    }
+
+    nav ul li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+
+    nav ul li a:hover, nav ul li a:focus {
+        background-color: #ddd;
+        color: #333;
+        }
+
+    .tool {
+        background-color: #fff;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .tool h3 {
+        color: #333;
+    }
+
+    .tool p, .tool a {
+        font-size: 16px;
+    }
+
+    .tool a {
+        display: inline-block;
+        margin-top: 10px;
+        background: #333;
+        color: #fff;
+        padding: 5px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .tool a:hover {
+        background: #555;
+    }
+
+    footer {
+           background-color: #4CAF50;
+           color: white;
+           text-align: center;
+           padding: 20px;
+           width: 100%;
+           font-family: "Comic Sans MS", sans-serif;
+           font-size: 16px;
+       }
+
+</style>
+
+<body>
+    <header>
+        <h1>Arabic Natural Language Processing at Lebanese University</h1>
+        <p>Nisreen El-Khansa Website</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="mission.html">Mission</a></li>
+            <li><a href="definition.html">NLP Definition</a></li>
+            <li><a href="tools.html">Tools for NLP</a></li>
+            <li><a href="statistics.html">Statistics</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+        </ul>
+    </nav>
+
+    <section id="tools">
+       <center> <u><h2>Tools for NLP</h2></u></center>
+    
+        <!-- SpaCy Tool -->
+        <div class="tool">
+            <h3>Tool 1: SpaCy</h3>
+            <p>
+                SpaCy is an open-source natural language processing library for Python, designed for production use. It stands out for its speed and efficiency. SpaCy offers pre-trained models for numerous languages, including support for Arabic. It is ideal for tasks such as tokenization, part-of-speech tagging, and named entity recognition in Arabic texts.
+            </p>
+            <a href="https://spacy.io/" target="_blank">Learn more</a>
+        </div>
+    
+        <!-- NLTK Tool -->
+        <div class="tool">
+            <h3>Tool 2: NLTK</h3>
+            <p>
+                The Natural Language Toolkit (NLTK) is a comprehensive library for Python, providing interfaces to over 50 corpora and lexical resources such as WordNet. It is widely used for prototyping and teaching, with extensive functionalities for text processing, classification, and analysis. NLTK includes support for Arabic through its diverse set of linguistic data and algorithms.
+            </p>
+            <a href="https://www.nltk.org/" target="_blank">Learn more</a>
+        </div>
+    
+        <!-- N-Gram Tool -->
+        <div class="tool">
+            <h3>Tool 3: N-Gram Tool (Arabic)</h3>
+            <p>
+                This interactive tool allows for the generation of N-Grams from Arabic text, facilitating linguistic analysis and research in Arabic NLP. N-Grams are essential for understanding text structure, developing language models, and improving text analysis algorithms.
+            </p>
+            <label for="ngramInput">Enter Arabic text:</label>
+            <textarea id="ngramInput" placeholder="Enter Arabic text..."></textarea>
+            <label for="nValue">Specify N (e.g., 2 for bigrams, 3 for trigrams):</label>
+            <input type="number" id="nValue" min="1" value="2">
+            <button onclick="generateNGrams()">Generate N-Grams</button>
+            <p id="ngramResult"></p>
+        </div>
+    
+        <!-- MADAMIRA Tool -->
+        <div class="tool">
+            <h3>Tool 4: MADAMIRA</h3>
+            <p>
+                MADAMIRA is a comprehensive tool for morphological analysis and disambiguation of Arabic. It provides highly accurate analysis for Modern Standard Arabic and dialectal texts, making it invaluable for parsing and understanding the complexities of Arabic morphology. This tool is essential for researchers and developers working on Arabic language processing.
+            </p>
+            <a href="https://aclanthology.org/L14-1479/" target="_blank">Learn more</a>
+        </div>
+    </section>
+
+    <script>
+        function generateNGrams() {
+            const ngramInput = document.getElementById('ngramInput').value;
+            const nValue = document.getElementById('nValue').valueAsNumber;
+            const ngramResult = document.getElementById('ngramResult');
+
+            // Implement your N-Gram generation logic here
+            const words = ngramInput.split(/\s+/);
+
+            // Generate N-grams based on user-specified N value
+            const ngrams = [];
+            for (let i = 0; i <= words.length - nValue; i++) {
+                const ngram = words.slice(i, i + nValue).join(' ');
+                ngrams.push(ngram);
+            }
+
+            // Display the result
+            ngramResult.textContent = `Generated ${nValue}-grams: ${ngrams.join(', ')}`;
+        }
+    </script>
+</body>
+
+
+<footer >
+    <p>Address: Lebanese University - Faculty of Literature and Letters - Communication and Language Sciences Center - Center Celine - Tayyuneh - Floor 6</p>
+    <p>Phone: +961 (1) 384132</p>
+    <p>Email: sclc@hotmail.com</p>
+</footer>
+
+</html>
+
+
+
+
+
+
